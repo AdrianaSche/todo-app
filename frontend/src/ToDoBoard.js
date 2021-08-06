@@ -2,9 +2,5 @@ import "./Board.css"
 
 
 export default function ToDoBoard() {
-    return(
-        <header className = "Board"> To-Do </header>
-
-
-    )
+    return <header className="Board"> To-Do </header>
 }

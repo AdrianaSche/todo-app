@@ -1,4 +1,3 @@
-
 import './App.css';
 import './Board.css'
 import ToDoBoard from "./ToDoBoard";
@@ -10,14 +9,14 @@ import axios from "axios";
 function App() {
 
 
-    const [toDo, setToDo] = useState({})
-    const ToDoHandler = event => setToDo ( {
+    const [description, setDescription] = useState({})
+    const ToDoHandler = event => setDescription({
         description: event.target.value
     })
 
 
     function addToDo() {
-        axios.post("/api/todo", toDo,)
+        axios.post("/api/todo", description,)
             .then(function (response) {
                 console.log(response);
             })
@@ -25,18 +24,29 @@ function App() {
                 console.log(error);
             });
     }
+    function getAllTodos() {
 
+        axios.get("/api/todo")
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.log(error);
+            })
+            .then(function () {
+            });
+    }
 
     return (
-    <div className="Layout">
-        <header className="header">Kanban 3001</header>
-      <ToDoBoard> To-Do </ToDoBoard>
-      <InProgressBoard> In Progress </InProgressBoard>
-      <DoneBoard> Done </DoneBoard>
-        <input type="Text" onChange={ToDoHandler}/>
-        <button onClick={addToDo}>add</button>
-    </div>
-  );
+        <div className="Layout">
+            <header className="header">Kanban 3001</header>
+            <ToDoBoard> To-Do </ToDoBoard>
+            <InProgressBoard> In Progress </InProgressBoard>
+            <DoneBoard> Done </DoneBoard>
+            <input type="Text" onChange={ToDoHandler}/>
+            <button onClick={addToDo}>add</button>
+        </div>
+    );
 }
 
 export default App;
