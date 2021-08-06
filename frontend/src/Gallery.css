@@ -2,6 +2,7 @@
 
 .Gallery {
     display: flex;
+    float: left;
     flex-wrap: wrap;
     justify-content: center;
     font-family: sans-serif;
@@ -12,8 +13,13 @@
     text-align: center;
     box-shadow: 1px 2px 8px hotpink;
     margin: 10px;
-    background-color: rgba(255, 105, 183, 0.2);
+    height: 300px;
+    font-size: 30px;
 
 }
+
+
+
+
 
 
