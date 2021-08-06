@@ -6,7 +6,7 @@ import Gallery3 from "./Gallery3";
 
 function App() {
   return (
-    <div>
+    <div className="Layout">
       <Gallery1 className = "Gallery"> To-Do </Gallery1>
       <Gallery2 className = "Gallery"> In Progress </Gallery2>
       <Gallery3 className = "Gallery"> Done </Gallery3>
